@@ -1,0 +1,42 @@
+application: ulysses-zheng
+version: 3
+runtime: python27
+api_version: 1
+threadsafe: false
+
+inbound_services:
+- mail
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+
+- url: /resume.html
+  static_files: resume.html
+  upload: resume.html
+
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /img
+  static_dir: img
+
+- url: /img/portfolio
+  static_dir: 'img/portfolio'
+
+- url: /fonts
+  static_dir: fonts
+
+- url: /font-awesome
+  static_dir: 'font-awesome'
+
+- url: /contact_me.py
+  script: contact_me.py
+
+- url: /favicon\.ico
+  static_files: img/favicon.ico
+  upload: img/favicon\.ico
